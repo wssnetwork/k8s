@@ -1,0 +1,17 @@
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: ksp-mysql-audit
+  namespace: default
+spec:
+  severity: 5
+  message: "Audit /var/lib/mysql/"
+  selector:
+    matchLabels:
+      name: mysql-pod
+  file:
+    matchDirectories:
+    - dir: /var/lib/mysql/
+      recursive: true
+  action:
+    Block
