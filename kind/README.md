@@ -11,3 +11,5 @@ All notes related to kind deployment.
 
 ## Getting start
 * Create cluster `$ kind create cluster --name <cluster-name>`
+
+## TO-DO
