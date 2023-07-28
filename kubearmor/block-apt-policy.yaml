@@ -4,7 +4,6 @@ metadata:
   name: block-pkg-mgmt-tools-exec
   namespace: default
 spec:
-  severity: 5
   message: "Block apt"
   selector:
     matchLabels:
@@ -13,5 +12,6 @@ spec:
     matchPaths:
     - path: /usr/bin/apt
     - path: /usr/bin/apt-get
-  action:
-    Block
+    - path: /usr/bin/curl
+    - path: /usr/bin/dash
+  action: Block
