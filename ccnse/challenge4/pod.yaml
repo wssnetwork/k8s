@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: django
+spec:
+  containers:
+  - image: registry-rndxlb7a.lab.practical-devsecops.training/django:latest
+    name: django
+    volumeMounts:
+    - mountPath: /var/run/secrets/token/kube-api-access-wmc2m
+      name: kube-api-access-wmc2m
+  serviceAccountName: default
+  volumes:
+  - name: kube-api-access-wmc2m
+    projected:
+      sources:
+      - serviceAccountToken:
+          path: token
+          expirationSeconds: 3607
+          audience: https://kubernetes.default.svc.cluster.local

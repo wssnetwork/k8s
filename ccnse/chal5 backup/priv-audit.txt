@@ -1,0 +1,207 @@
+~# cat priv-audit.txt 
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: django
+    namespace: default
+
+--------------------------------------------
+
+-- [warning] PrivilegedNil
+   Message: privileged is not set in container SecurityContext. Privileged defaults to 'false' but it should be explicitly set to 'false'.
+   Metadata:
+      Container: django
+
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: djangonv
+    namespace: default
+
+--------------------------------------------
+
+-- [warning] PrivilegedNil
+   Message: privileged is not set in container SecurityContext. Privileged defaults to 'false' but it should be explicitly set to 'false'.
+   Metadata:
+      Container: django
+
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: hostpath-exec-pod
+    namespace: default
+
+--------------------------------------------
+
+-- [warning] PrivilegedNil
+   Message: privileged is not set in container SecurityContext. Privileged defaults to 'false' but it should be explicitly set to 'false'.
+   Metadata:
+      Container: hostpath-exec-pod
+
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: priv-exec-pod
+    namespace: default
+
+--------------------------------------------
+
+-- [error] PrivilegedTrue
+   Message: privileged is set to 'true' in container SecurityContext. It should be set to 'false'.
+   Metadata:
+      Container: priv-pod
+
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: db-pod
+    namespace: prod
+
+--------------------------------------------
+
+-- [warning] PrivilegedNil
+   Message: privileged is not set in container SecurityContext. Privileged defaults to 'false' but it should be explicitly set to 'false'.
+   Metadata:
+      Container: db-pod
+
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: ksniff-6tbn8
+    namespace: prod
+
+--------------------------------------------
+
+-- [error] PrivilegedTrue
+   Message: privileged is set to 'true' in container SecurityContext. It should be set to 'false'.
+   Metadata:
+      Container: ksniff-privileged
+
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: web-pod
+    namespace: prod
+
+--------------------------------------------
+
+-- [warning] PrivilegedNil
+   Message: privileged is not set in container SecurityContext. Privileged defaults to 'false' but it should be explicitly set to 'false'.
+   Metadata:
+      Container: web-pod
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: istiod
+    namespace: istio-system
+
+--------------------------------------------
+
+-- [warning] PrivilegedNil
+   Message: privileged is not set in container SecurityContext. Privileged defaults to 'false' but it should be explicitly set to 'false'.
+   Metadata:
+      Container: discovery
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: calico-kube-controllers
+    namespace: kube-system
+
+--------------------------------------------
+
+-- [warning] PrivilegedNil
+   Message: privileged is not set in container SecurityContext. Privileged defaults to 'false' but it should be explicitly set to 'false'.
+   Metadata:
+      Container: calico-kube-controllers
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: coredns
+    namespace: kube-system
+
+--------------------------------------------
+
+-- [warning] PrivilegedNil
+   Message: privileged is not set in container SecurityContext. Privileged defaults to 'false' but it should be explicitly set to 'false'.
+   Metadata:
+      Container: coredns
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: DaemonSet
+  metadata:
+    name: calico-node
+    namespace: kube-system
+
+--------------------------------------------
+
+-- [error] PrivilegedTrue
+   Message: privileged is set to 'true' in container SecurityContext. It should be set to 'false'.
+   Metadata:
+      Container: calico-node
+
+-- [error] PrivilegedTrue
+   Message: privileged is set to 'true' in container SecurityContext. It should be set to 'false'.
+   Metadata:
+      Container: upgrade-ipam
+
+-- [error] PrivilegedTrue
+   Message: privileged is set to 'true' in container SecurityContext. It should be set to 'false'.
+   Metadata:
+      Container: install-cni
+
+-- [error] PrivilegedTrue
+   Message: privileged is set to 'true' in container SecurityContext. It should be set to 'false'.
+   Metadata:
+      Container: mount-bpffs
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: DaemonSet
+  metadata:
+    name: kube-proxy
+    namespace: kube-system
+
+--------------------------------------------
+
+-- [error] PrivilegedTrue
+   Message: privileged is set to 'true' in container SecurityContext. It should be set to 'false'.
+   Metadata:
+      Container: kube-proxy

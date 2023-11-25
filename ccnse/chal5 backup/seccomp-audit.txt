@@ -1,0 +1,182 @@
+~# cat seccomp-audit.txt 
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: django
+    namespace: default
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: djangonv
+    namespace: default
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: hostpath-exec-pod
+    namespace: default
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: priv-exec-pod
+    namespace: default
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: db-pod
+    namespace: prod
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: ksniff-6tbn8
+    namespace: prod
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: web-pod
+    namespace: prod
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: istio-ingressgateway
+    namespace: istio-system
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: istiod
+    namespace: istio-system
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: calico-kube-controllers
+    namespace: kube-system
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: coredns
+    namespace: kube-system
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: DaemonSet
+  metadata:
+    name: calico-node
+    namespace: kube-system
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: DaemonSet
+  metadata:
+    name: kube-proxy
+    namespace: kube-system
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContex

@@ -1,0 +1,28 @@
+~# cat seccomp-audit.txt 
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: hostpath-exec-pod
+    namespace: default
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: priv-exec-pod
+    namespace: default
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.

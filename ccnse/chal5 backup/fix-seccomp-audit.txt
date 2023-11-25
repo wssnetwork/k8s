@@ -1,0 +1,84 @@
+~# cat fix-seccomp-audit.txt 
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: DaemonSet
+  metadata:
+    name: calico-node
+    namespace: kube-system
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: DaemonSet
+  metadata:
+    name: kube-proxy
+    namespace: kube-system
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: istio-ingressgateway
+    namespace: istio-system
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: istiod
+    namespace: istio-system
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: calico-kube-controllers
+    namespace: kube-system
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext.
+
+
+---------------- Results for ---------------
+
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: coredns
+    namespace: kube-system
+
+--------------------------------------------
+
+-- [error] SeccompProfileMissing
+   Message: Pod Seccomp profile is missing. Seccomp profile should be added to the pod SecurityContext

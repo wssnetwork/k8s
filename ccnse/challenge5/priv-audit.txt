@@ -1,0 +1,32 @@
+~# cat priv-audit.txt 
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: hostpath-exec-pod
+    namespace: default
+
+--------------------------------------------
+
+-- [warning] PrivilegedNil
+   Message: privileged is not set in container SecurityContext. Privileged defaults to 'false' but it should be explicitly set to 'false'.
+   Metadata:
+      Container: hostpath-exec-pod
+
+
+---------------- Results for ---------------
+
+  apiVersion: v1
+  kind: Pod
+  metadata:
+    name: priv-exec-pod
+    namespace: default
+
+--------------------------------------------
+
+-- [error] PrivilegedTrue
+   Message: privileged is set to 'true' in container SecurityContext. It should be set to 'false'.
+   Metadata:
+      Container: priv-pod
